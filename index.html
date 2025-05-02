@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        
+        body{
+            background-color: #00173f;
+            color: white;
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        .to-body{
+            /* border: 2px solid red; */
+            height: fit-content;
+            /* width: 50px; */
+            text-align: center;
+            margin-top: 20px;
+            padding: 50px;
+        }
+
+        .input-add{
+            /* border: 2px solid blue; */
+            padding: 20px;
+        }
+        .input-add input{
+            padding: 10px;
+            font-family: serif;
+            font-size: 20px
+        }
+        .input-add button{
+            color: white;
+            background-color: rgb(6, 174, 6);
+            border: none;
+            border-radius: 4px;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 20px
+        }
+
+        .to-do-display-area{
+            /* border:2px solid rgb(27, 26, 26); */
+            
+        }
+        .to-do-display-area button{
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .todo{
+            /* border: 2px solid grey; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="to-body">
+        <h1>To Do App</h1>
+        <div class="input-add">
+            <input type="text" placeholder="Enter Todo">
+            <input type="date" id="dateElm">
+            <button onclick="addBtn()">Add</button>
+        </div>
+
+        <div class="to-do-display-area">
+
+        </div>    
+    </div>
+
+    <script>
+        //will work here  for script
+        let inputBoxElment =  document.querySelector("input");
+        let toDoDisplayArea = document.querySelector(".to-do-display-area");
+
+        toDoDisplayArea.innerHTML = localStorage.getItem("mytodo");
+
+        function addBtn(){
+                if(inputBoxElment.value.length !== 0){
+                    console.log(inputBoxElment.value) //checking inputbox value
+                    // after clicking add btn
+                    toDoDisplayArea.innerHTML += `<p class="todo">${inputBoxElment.value} 
+                        <button onclick="deleteBtn(this)">Delete</button></p>` ;
+        
+                    inputBoxElment.value = ""; //clearing input box value
+                    localStorage.setItem("mytodo",toDoDisplayArea.innerHTML)
+
+                }
+            }
+
+        function deleteBtn(e){
+            e.parentElement.remove();
+            localStorage.setItem("mytodo",toDoDisplayArea.innerHTML);
+        }
+        
+        //now we get value from input 
+        console.log(inputBoxElment);
+        
+    </script>
+</body>
+</html>

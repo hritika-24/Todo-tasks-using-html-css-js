@@ -1,0 +1,54 @@
+
+body{
+    background-color: #00173f;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.to-body{
+    /* border: 2px solid red; */
+    height: fit-content;
+    /* width: 50px; */
+    text-align: center;
+    margin-top: 20px;
+    padding: 50px;
+}
+
+.input-add{
+    /* border: 2px solid blue; */
+    padding: 20px;
+}
+.input-add input{
+    padding: 10px;
+    font-family: serif;
+    font-size: 20px
+}
+.input-add button{
+    color: white;
+    background-color: rgb(6, 174, 6);
+    border: none;
+    border-radius: 4px;
+}
+button{
+    padding: 10px 20px;
+    font-size: 20px
+}
+
+.to-do-display-area{
+    /* border:2px solid rgb(27, 26, 26); */
+    
+}
+.to-do-display-area button{
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+}
+
+.todo{
+    /* border: 2px solid grey; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
